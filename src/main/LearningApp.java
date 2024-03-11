@@ -46,8 +46,8 @@ public class LearningApp {
         wordBank.put("そ", "so");
         wordBank.put("わ", "wa");
 
-        wordBank.put("え？", "huh?");
-        wordBank.put("おい！", "hey!");
+        wordBank.put("え?", "huh?");
+        wordBank.put("おい!", "hey!");
         wordBank.put("いいえ", "no");
         wordBank.put("うん", "yeah");
         wordBank.put("ええ", "yes");
