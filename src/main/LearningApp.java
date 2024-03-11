@@ -71,15 +71,30 @@ public class LearningApp {
             System.out.println("Level " + (currentLevel + 1));
             List<String> currentWords = new ArrayList<>(levels.get(currentLevel));
             Collections.shuffle(currentWords); // Shuffle words for random order
-            for (String word : currentWords) {
-                System.out.print("What is the English word for '" + word + "'? ");
-                String answer = scanner.nextLine();
-                if (wordBank.get(word).equalsIgnoreCase(answer)) {
-                    System.out.println("Correct!\n");
+            boolean levelCompleted = false;
+
+            while (!levelCompleted) {
+                Collections.shuffle(currentWords); // Shuffle words for random order
+                boolean allCorrect = true;
+                for (String word : currentWords) {
+                    System.out.print("What is the English word for '" + word + "'? ");
+                    String answer = scanner.nextLine();
+                    if (wordBank.get(word).equalsIgnoreCase(answer)) {
+                        System.out.println("Correct!");
+                    } else {
+                        System.out.println("Incorrect, the right answer is: " + wordBank.get(word));
+                        allCorrect = false;
+                    }
+                }
+
+                if (allCorrect) {
+                    levelCompleted = true;
+                    System.out.println("Level " + (currentLevel + 1) + " completed!");
                 } else {
-                    System.out.println("Incorrect, the right answer is: " + wordBank.get(word) + "\n");
+                    System.out.println("Some answers were incorrect. Let's try the level again.");
                 }
             }
+            
             currentLevel++;
             if (currentLevel >= levels.size()) {
                 System.out.println("Congratulations, you've completed all levels!\n\n");
