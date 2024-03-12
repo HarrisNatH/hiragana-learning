@@ -4,7 +4,11 @@
 a hiragana learning platform. A personal project I created to help me (and for people) to learn hiragana.
 
 ## Running the binary
-Simply press run the program.
+If you run the program on Windows PowerShell.
+Before running the program, enter this on the terminal console.
+
+    $OutputEncoding = [Console]::InputEncoding = [Console]::OutputEncoding = New-Object System.Text.UTF8Encoding
+
 
 ## Code details
 The main works happens in `LearningApp()` in `Main.java`. 

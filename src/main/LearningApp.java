@@ -45,15 +45,14 @@ public class LearningApp {
         wordBank.put("せ", "se");
         wordBank.put("そ", "so");
         wordBank.put("わ", "wa");
-
         wordBank.put("え?", "huh?");
-        wordBank.put("おい!", "hey!");
+        wordBank.put("おい!", "hey!");    
         wordBank.put("いいえ", "no");
         wordBank.put("うん", "yeah");
         wordBank.put("ええ", "yes");
         wordBank.put("いく", "will go");
         wordBank.put("いこく", "let's go");
-        wordBank.put("いけ！", "go!");
+        wordBank.put("いけ!", "go!");
         wordBank.put("こわい", "scary");
         wordBank.put("かわいい", "cute");
         wordBank.put("かあさん", "mother");
@@ -61,8 +60,8 @@ public class LearningApp {
     }
 
     private void initLevels() {
-        levels.add(new ArrayList<>(List.of("あ","い","う","え","お","ん","え？","おい！","いいえ","うん","ええ"))); // Level 1
-        levels.add(new ArrayList<>(List.of("か","き", "く","け","こ","わ","いく","いこく","いけ！","こわい","かわいい","かあさん"))); // Level 2
+        levels.add(new ArrayList<>(List.of("あ","い","う","え","お","ん","え?","おい!","いいえ","うん","ええ"))); // Level 1
+        levels.add(new ArrayList<>(List.of("か","き", "く","け","こ","わ","いく","いこく","いけ!","こわい","かわいい","かあさん"))); // Level 2
         // Add more levels as needed
     }
 
