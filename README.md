@@ -1,7 +1,9 @@
 # HIRAGANA LEARNING 
 
 ## Description
-a hiragana learning platform. A personal project I created to help me (and for people) to learn hiragana.
+THIS IS AN ONGOING PROJECT - adding hiragana characters and words.
+
+A hiragana learning platform. A personal project I created to help me (and for people) to learn hiragana.
 
 ## Running the binary
 If you run the program on Windows PowerShell.
@@ -19,24 +21,25 @@ In `LearningApp.java` a class that utilises `Collections`, `HashMap`, `Map`, `Sc
 
 First, the class creates a few private fields and initalises them.
 ```
-private final Map<String, String> wordBank;
-    private int currentLevel;
-    private final List<List<String>> levels;
-    private final Scanner scanner;
+public class LearningApp {
+    private final Map<String, String> wordBank = new HashMap<>();
+    private final List<List<String>> levels = new ArrayList<>();
+    private final Scanner scanner = new Scanner(System.in);
 
     public LearningApp() {
-        this.wordBank = new HashMap<>();
-        this.levels = new ArrayList<>();
-        this.currentLevel = 0;
-        this.scanner = new Scanner(System.in);
-        initWordBank();
-        initLevels();
+        initApp();
     }
+}
 ```
 
-Next,`initWordBank()` is where hiragana alphabat and words are added (over time) using key-value pair. From this bank, `initLevels()` uses an ArrayList<> to add keys as elements on each levels.
+Next,`addWord()` is a method to add hiragana, its English meaning and level structured together in one initialization.
+For each addWord, respective hiragana and English are added in `wordBank`.
 
-Finally, `start()` it creates a `List<String>` that takes in level from `initLevels` then shuffles the elements. the learning begins with boolean `allCorrect` as true, if a player is wrong on any of one word in certain level it will change `allCorrect` to false, it will repeat the whole level until all are correct.
+The game starts with `levels` at zero, taking the max level from `addWord()` it will add every empty `ArrayList<>` until match level available. `levels` then adds hiragana based on level
+
+Each `addWord()` is added to `initApp()` which is already initialised by `LearningApp()`
+
+Finally, `start()` it creates a copy `List<String>` based on `levels` then shuffles the hiragana elements. the learning begins with boolean `allCorrect` as true, if a player is wrong on any of one word in certain level it will change `allCorrect` to false, it will repeat the whole level until all are correct.
 
 When player completes a level, the system adds the next level's elements to existing element pool. Increasing the difficulty and complexity of learning, increases `currentLevel` by 1.
 
