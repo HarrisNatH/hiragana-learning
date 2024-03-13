@@ -41,7 +41,7 @@ Each `addWord()` is added to `initApp()` which is already initialised by `Learni
 
 Finally, `start()` it creates a copy `List<String>` based on `levels` then shuffles the hiragana elements. the learning begins with boolean `allCorrect` as true, if a player is wrong on any of one word in certain level it will change `allCorrect` to false, it will repeat the whole level until all are correct.
 
-When player completes a level, the system adds the next level's elements to existing element pool. Increasing the difficulty and complexity of learning, increases `currentLevel` by 1.
+When player completes a level, the system begins with next level's pool. Increasing the difficulty and complexity of learning, increases `currentLevel` by 1.
 
 The learning ends when `currentLevel` has reached `levels.size()` and sends out a congratulation message.
 __

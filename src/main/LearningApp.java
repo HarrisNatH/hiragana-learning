@@ -84,10 +84,10 @@ public class LearningApp {
      * every time next level achieved, adds new words.
      */
     public void start(int currentLevel) {
-        while (currentLevel < levels.size()) {
+        while (currentLevel -1 < levels.size()) {
             System.out.println("Level " + (currentLevel));
             //creates a copy of ArrayList<> consists hiragana based on levels 
-            List<String> currentWords = new ArrayList<>(levels.get(currentLevel));
+            List<String> currentWords = new ArrayList<>(levels.get(currentLevel -1));
             Collections.shuffle(currentWords); // Shuffle words for random order
             
             boolean levelCompleted = false;
@@ -109,14 +109,14 @@ public class LearningApp {
                 //based on above's for loop statement. if all words are correctly answered, proceed to next level
                 if (allCorrect) {
                     levelCompleted = true;
-                    System.out.println("Level " + (currentLevel) + " completed!");
+                    System.out.println("Level " + (currentLevel) + " completed!\n");
                 } else {
-                    System.out.println("Some answers were incorrect. Let's try the level again.");
+                    System.out.println("Some answers were incorrect. Let's try the level again.\n");
                 }
             }
             //increase currentLevel until last level possible.
             currentLevel++;
-            if (currentLevel >= levels.size()) {
+            if (currentLevel -1 >= levels.size()) {
                 System.out.println("Congratulations, you've completed all levels!\n\n");
                 break;
             }
